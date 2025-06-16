@@ -17,13 +17,16 @@ select batch_id,
        from gms_us_hub.txn_stockmovement_erp_glbl
        where WO_TRANS_DT > 20250101
        group by batch_id, mvmt_type_cd, batch_stat_cd
-)
+),
+batch_released as (
 select
        batch_id,
       --  wo_trans_dt,
        MAX(disp_dt) as disp_dt,
        MAX(a_disp_dt) as a_disp_dt
 from stock_mvmt group by batch_id
+)
+select * from batch_released
 
 -- COMMAND ----------
 

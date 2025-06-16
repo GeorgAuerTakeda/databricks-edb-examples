@@ -30,7 +30,7 @@
 -- MAGIC # table_patterns = ["*F5541Tb*"]
 -- MAGIC # table_patterns = ["*F3411*"]
 -- MAGIC # table_patterns = ["*3711*"]
--- MAGIC table_patterns = ["*4108*"]
+-- MAGIC # table_patterns = ["*4108*"]
 -- MAGIC # table_patterns = ["*gmsgq_jde*"]
 -- MAGIC # table_patterns = ["*veeva*"]
 -- MAGIC # table_patterns = ["*mediva*"] 
@@ -51,7 +51,7 @@
 -- MAGIC # table_patterns = ["*beacon*"]
 -- MAGIC # table_patterns = ["*APDS*"]
 -- MAGIC # table_patterns = ["*jde*"]
--- MAGIC # table_patterns = ["*lims*"]
+-- MAGIC table_patterns = ["*lims*"]
 -- MAGIC
 -- MAGIC # Get the list of tables matching the patterns
 -- MAGIC matching_tables = []
@@ -103,8 +103,16 @@
 
 -- COMMAND ----------
 
-select * from gms_us_lake.gmsgq_veeva_documents
-where ftp_source_location__v is not null
+-- lims tables with column disposition
+
+-- gmsgq_glims_lot
+-- gmsgq_glims_lot_sampling_point
+-- txn_cmo_lims_change_log_error_glbl
+-- txn_cmo_lims_change_log_error_hst_glbl
+-- txn_cmo_lims_change_log_glbl
+-- txn_cmo_lims_change_log_glbl_prod_stg
+-- txn_cmo_lims_data_glbl
+-- txn_cmo_lims_data_glbl_stg
 
 -- COMMAND ----------
 
